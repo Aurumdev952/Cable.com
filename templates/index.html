@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- this is html boilerplate code -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/Web/favicon2.png') }}">
+    <title>Cable</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('home') }}" class="selected">Home</a>
+            <a href="{{ url_for('missing') }}">Missing</a>
+            <a href="./help.html">Help</a>
+        </nav>
+    </header>
+    <main>
+        <div class="main">
+            <div class="title">
+                <h1>Welcome to Cable.com,<br> Access information about your adapter cables.</h1>
+            </div>
+            <div class="forms">
+                <form action="{{ url_for('getCable') }}" method="post" class="form">
+                    <h2>find cable ID</h2>
+                    <input type="text" name="name" placeholder="Enter name or RCA student ID.." required autocomplete="off">
+                    <input type="submit" value="Find">
+                </form>
+                <form action="{{ url_for('getOwner') }}" method="post" class="form">
+                    <h2>find cable owner</h2>
+                    <input type="text" name="cable_id" placeholder="Enter Cable ID.." required autocomplete="off">
+                    <input type="submit" value="Find">
+                </form>
+            </div>
+        </div>
+
+        {% if popup['status'] == 'True' %}
+        <div class="popup-wrapper" id="popup">
+            <div class="popup-container">
+        
+               
+                <form action="#" class="popup-form">
+                    <h2>Alert</h2>
+                    <p class="{{ popup['content']['msg1']['style'] }}">{{ popup['content']['msg1']['text'] }}<br/>
+                  
+                </form>
+                <a class="popup-close" href="#popup">X</a>
+            </div>
+        </div>
+
+        {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- this is html boilerplate code -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/Web/favicon2.png') }}">
+    <title>Cable</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href={{ url_for('home') }}>Home</a>
+            <a href={{ url_for('missing') }}>Missing</a>
+            <a href="./help.html">Help</a>
+        </nav>
+    </header>
+    <main>
+        <div class="main res">
+            <h1 class="title title2 t">Notify the owner of the cable</h1>
+            <form action="url_for('notify')" class="notify">
+                <div class="in">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" placeholder="Enter your name.." required autocomplete="off">
+                </div>
+                <div class="in">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" placeholder="Enter your email.." required autocomplete="off">
+                </div>
+                <div class="in">
+                    <label for="slack">Slack username</label>
+                    <input type="text" name="slack" placeholder="Enter your slack username.." autocomplete="off">
+                </div>
+                <div class="sub">
+                    <input type="submit" value="Notify">
+                </div>
+            </form>
+            
+        </div>
+    </main>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html
