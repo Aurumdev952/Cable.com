@@ -10,8 +10,6 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] =\
         'sqlite:///' + os.path.join(basedir, 'cable_database.db')
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://xasibgvt:wVz0PlRqg0nmrFIihLQfeAeuYdeRmYp2@mouse.db.elephantsql.com/xasibgvt'
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:BPd8eK2UGK5YaD2gVIow@containers-us-west-105.railway.app:7486/railway'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.secret_key = 'secret string'
 
